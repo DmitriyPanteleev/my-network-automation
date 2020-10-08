@@ -23,7 +23,7 @@ def threads_ping(function, ip_address = '127.0.0.1', count = 3, limit = 1):
     return list(future.result())
 
 if __name__ == '__main__':
-    
+    # Example of check_ip_list look in check_ip_list_example
     with open('check_ip_list', 'r') as chkList:
         for ip in chkList:
             all_done = threads_ping(ping_ip, ip, 3, 3)

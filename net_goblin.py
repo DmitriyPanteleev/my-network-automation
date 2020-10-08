@@ -10,9 +10,7 @@ def GetPortStatus(ip,comm,oid):
     errorIndication, errorStatus, errorIndex, varBinds = next(
        getCmd(SnmpEngine(),
           CommunityData(comm),
-          UdpTransportTarget(
-          (ip, 161), timeout=2.0, retries=0
-          ),
+          UdpTransportTarget((ip, 161), timeout=2.0, retries=0),
           ContextData(),
           ObjectType(ObjectIdentity(oid)))
     )
