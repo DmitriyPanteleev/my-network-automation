@@ -1,0 +1,20 @@
+- id: 11
+  name: BRROUTER11
+  to_name: BRROUTER00
+  IT: 791
+  BS: 1550
+  to_id: 1
+
+- id: 12
+  name: BRROUTER12
+  to_name: BRROUTER00
+  IT: 793
+  BS: 1510
+  to_id: 1
+
+- id: 14
+  name: BRROUTER14
+  to_name: BRROUTER56
+  IT: 892
+  BS: 1650
+  to_id: 2
