@@ -60,29 +60,21 @@ def SetPortStatus(ip,comm,oid,status):
  except:           
      rez=None
  return rez
-#снимает статус порта   
-#dlink
+
+if __name__ == '__main__':
+# Example how to use
+
+# Get port status
 # oid=1.3.6.1.2.1.2.2.1.8.x
-# x - номер порта
+# x - port number
+# D-Link
 rz=GetPortStatus('12.1.14.6','XFiles','1.3.6.1.2.1.2.2.1.8.9')  
 print "Dlink: ",rz
-#snr
-rz=GetPortStatus('72.1.14.201','X-Files','1.3.6.1.2.1.2.2.1.8.3')   
-print "SNR: ",rz
-#qsw
-rz=GetPortStatus('72.1.114.201','X-Files','1.3.6.1.2.1.2.2.1.8.3')  
-print "QSW: ",rz
  
-#устанавливаем статус порта
-#up=1,down=2
-#oid=1.3.6.1.2.1.2.2.1.7.9.x
-# x - номер порта
-#Dlink
+# Set port status
+# up=1,down=2
+# oid=1.3.6.1.2.1.2.2.1.7.9.x
+# x - port number
+# D-Link
 rz=SetPortStatus('72.8.114.4','X-Files','1.3.6.1.2.1.2.2.1.7.9',1)
-print rz;
-#SNR
-rz=SetPortStatus('72.7.114.196','X-Files','1.3.6.1.2.1.2.2.1.7.8',1)
-print rz;
-#QSR
-rz=SetPortStatus('12.1.114.100','X-Files','1.3.6.1.2.1.2.2.1.7.3',1)
 print rz;
