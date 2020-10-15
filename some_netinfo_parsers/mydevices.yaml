@@ -1,0 +1,13 @@
+routers:
+- device_type: cisco_ios
+  ip: 192.168.61.110
+  username: admuser
+  password: superpass
+- device_type: cisco_ios
+  ip: 192.168.61.112
+  username: admuser
+  password: superpass
+- device_type: cisco_ios
+  ip: 192.168.61.114
+  username: admuser
+  password: superpass
