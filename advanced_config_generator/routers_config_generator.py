@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+
 from jinja2 import Environment, FileSystemLoader
 import yaml
 import sys
