@@ -1,0 +1,4 @@
+ip access-list extended testlist
+ permit icmp any any
+ permit ip any any
+ 

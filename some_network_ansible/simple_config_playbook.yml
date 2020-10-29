@@ -1,0 +1,25 @@
+---
+
+- name: Commiting some changes into office borders
+  hosts: office_border
+  
+  tasks:
+  
+    - name: Some Configuration
+      ios_config:
+        lines:
+          - no logging console
+          - no ip domain lookup
+         parents:
+           - interface GigabitEthernet0/1
+         lines:
+           - description INTERNETRT
+           - exit
+        backup: yes
+        save_when: modified
+      register: cfg
+      
+    - name: Show config updates
+      debug: var=cfg.updates
+      when: cfg.changed
+      

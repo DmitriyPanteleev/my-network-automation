@@ -1,0 +1,19 @@
+---
+
+- name: Run show clock and interfaces on office borders
+  hosts: office-border
+  
+  tasks:
+  
+    - name: Show interfaces
+      ios_command:
+        commands:
+          - sh clo
+          - ping 10.255.61.2
+        wait_for:
+          - result[1] contains 'Success rate is 100 percent'
+      register: show_out_result
+      
+    - name: Show output
+      debug: var=show_out_result.stdout_lines
+      

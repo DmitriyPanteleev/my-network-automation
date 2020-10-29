@@ -1,0 +1,18 @@
+---
+
+- name: Commiting some changes into office borders
+  hosts: office_border
+  
+  tasks:
+  
+    - name: Some Configuration
+      ios_config:
+        src: templates/acl_cfg.ccf
+        backup: yes
+        save_when: modified
+      register: cfg
+      
+    - name: Show config updates
+      debug: var=cfg.updates
+      when: cfg.changed
+      

@@ -1,0 +1,17 @@
+---
+
+- name: Run show clock and interfaces on office borders
+  hosts: office_border
+  
+  tasks:
+  
+    - name: Show interfaces
+      ios_facts:
+        gather_subset: hardware
+      register: ios_facts_results
+      
+    - name: Copy output some facts
+      copy:
+        content: "{{ ios_facts_results | to_nice_json }}"
+        dest: "gathered_facts/{{inventory_hostname}}_facts.json"
+      
